@@ -20,7 +20,7 @@
 * 程式進入點
     * Python 是一種腳本語言，沒有統一的入口，基本上就是從第一行執行到最後一行。
     * 用一種模擬的方式來產生程式進入點。
-        ```
+        ``` Python
             if __name__ == “__main__”:
                 # suite
         ```
@@ -78,7 +78,7 @@
 
 ## 流程控制
 ### if … elif … else
-```
+``` Python
 if condition1:
     # suite
 elif condition2:
