@@ -66,7 +66,7 @@
 * 函式中還可以定義函式，稱為區域函式（Local Function），區域函式可以直接存取它的外部函式的參數或區域變數，如此可以減少呼叫函式時引數的傳遞。
 * 不支援函式重載（overloading），後定義的函式會覆改先前定義的函式。可藉助預設引數來有限度地模仿函式重載。
 * 預設引數
-    ```
+    ``` Python
     def greeting(gender, name="triumph")
         # suite
     ```
@@ -88,7 +88,7 @@ else:
 ```
 
 ### while … else
-```
+``` Python
 while condition:
     # suite
 else
@@ -98,7 +98,7 @@ else
     # 但強烈不建議使用這個區塊。
 ```
 ### for … in … else
-```
+``` Python
 for arg in iterable:
     # suite
 else
@@ -136,7 +136,7 @@ else
 
 
 
-```
+``` Python
 class Account(若有父類別則在此括號內以逗號分隔):
     def __init__(self, name, number, balance):
         self.name = name
@@ -193,7 +193,7 @@ finally:
 
 ## 發行套件 Package distribution
 在套件中新增一個名為 setup.py 的檔案，參考內容如下：
-```
+``` Python
 from distutils.core import setup
 
 setup(
@@ -206,9 +206,9 @@ setup(
     description = “some description"
 ) 
 ```
-執行命令 ``` python3 setup.py sdist ``` 來建構發行套件檔。
-執行命令 ``` python3 setup.py install ``` 將發行套件檔安裝為本地副本（local copy）
-執行命令 ``` python3 setup.py upload ``` 將發行套件上傳至 PyPI
+* 執行命令 ``` python3 setup.py sdist ``` 來建構發行套件檔。
+* 執行命令 ``` python3 setup.py install ``` 將發行套件檔安裝為本地副本（local copy）
+* 執行命令 ``` python3 setup.py upload ``` 將發行套件上傳至 PyPI
 
 ## 常用內建模組
 * collections
