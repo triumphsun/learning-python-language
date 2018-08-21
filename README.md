@@ -174,7 +174,7 @@ class Account(若有父類別則在此括號內以逗號分隔):
 
 ## 例外處理
 
-```
+``` Python
 try:
     # do something
 except BaseException as err:
