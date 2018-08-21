@@ -1,6 +1,4 @@
-# Python 3.5 筆記
-
-## 概述
+# 概述
 * Python 3 之後，直譯器預期的原始檔案編碼必須是 UTF-8。（Python 2.x 預期的是 ASCII）
 * 註解的寫法：井字號。
 * 程式碼的大小寫是有區別的（case sensitive）。
@@ -12,7 +10,7 @@
 * 物件導向機制支援**多重繼承**。
 * 程式區塊（在 Python 中稱為 **Suite**）
     * 使用冒號（:）開頭，之後同一區塊範圍要有相同的縮排，不可混用不同空白數量，也不可混用空白與 Tab。
-    * Python 的建議是使用四個空白做為縮排。
+    * Python 建議使用四個空白做為縮排。
 * DocStrings
     * 類似 javadoc 的自描述文件系統。
     * 套件層級的 DocStrings 要寫在套件對應的 \_\_init\_\_.py 檔案中。
@@ -28,7 +26,7 @@
 * [官方開發文件](https://docs.python.org/3/)
 * [良葛格](https://openhome.cc/Gossip/Python/)
 
-## 資料型態
+# 資料型態
 
 * 數值
     * int  # python 2.x 的整數分為 int 與 long
@@ -44,7 +42,7 @@
     * set # 無序、不重覆、元素需為 hashable 物件 {'Hello', 'World’} 
     * dict # 鍵值組 {'key': 'value’} 
 
-## 運算子
+# 運算子
 * 運算子 == 與 != 是用來比較物件實際的值、狀態的相等性，而運算子 is 與 is not 是用來比較兩個物件的參考是否相等。
 * 加減乘除運算子 +, -, *, /
     * 實作方法 \_\_add\_\_(), \_\_sub\_\_(), \_\_mul\_\_(), \_\_truediv\_\_()
@@ -59,8 +57,8 @@
     * 應用於數值型態
     * 應用於 set
 
-## 流程控制
-### if … elif … else
+# 流程控制
+## if … elif … else
 ``` Python
 if condition1:
     # suite
@@ -70,7 +68,7 @@ else:
     # suite
 ```
 
-### while … else
+## while … else
 ``` Python
 while condition:
     # suite
@@ -80,7 +78,7 @@ else
     # 若不想執行此區塊，需在 while 區塊中 break 來中斷迴圈。
     # 但強烈不建議使用這個區塊。
 ```
-### for … in … else
+## for … in … else
 ``` Python
 for arg in iterable:
     # suite
@@ -90,10 +88,10 @@ else
     # 若不想執行此區塊，需在 if 區塊中 break 來中斷迴圈。
 ```
 
-### for Comprehension
+## for Comprehension
 暫略
 
-## 函式 Function
+# 函式 Function
 * 函式也是物件，可以指定給其它的變數。
 * 呼叫函式時，不一定要依照參數宣告順序來傳入引數，而可以指定參數名稱來設定其引數值。
 * 如果函式執行完畢但沒有使用 return 傳回值，或者使用了 return 結束函式但沒有指定傳回值，預設就會傳回 None。
@@ -110,7 +108,7 @@ else
     * 在一個函式中可同時使用 * 與 ** 。
 * Lambda 函式
 
-## 模組 Module
+# 模組 Module
 * 一個 *.py 檔案就是一個模組，透過 import 命令可以將其它模組引入。被 import 的模組中的程式碼會被執行。
 * 在 \_\_builtins\_\_ 模組中的函式、類別等名稱，都可以不用 import 就直接取用，而且不用加上模組的名稱為前置。
 * 想要知道一個模組中有哪些名稱，可以使用 dir() 函式。
@@ -123,18 +121,16 @@ else
     * Python 安裝中標準程式庫資料夾
     * PTH 檔案中列出的資料夾
 
-## 套件 Package
+# 套件 Package
 * 套件資料夾中一定要有一個 \_\_init\_\_.py，該資料夾才會被視為一個套件。
 * 可建立多層次套件，也就是套件中還有套件，在這種情況之下，每個擔任套件的資料夾與子資料夾中，各要有一個 \_\_init\_\_.py 檔案。
 * 若要針對套件來撰寫 DocStrings，可以在套件相對應的 \_\_init\_\_.py 中使用三引號來撰寫。
 
-## 物件導向
+# 物件導向
 * 類別若沒有指定父類別，那麼就是繼承 object 類別。
 * 可以進行**多重繼承**。多個父類別繼承下來的方法名稱沒有衝突時是最單純的狀況，有名稱衝突時就要注意搜尋順序：基本上是從子類別開始尋找名稱，接著是同一階層父類別由左至右搜尋，再至更上階層父類別由左至右搜尋，直到達到頂層為止。
 
 ## 類別 Class
-
-
 
 ``` Python
 class Account(若有父類別則在此括號內以逗號分隔):
@@ -150,7 +146,7 @@ class Account(若有父類別則在此括號內以逗號分隔):
         # do something here
 ```
 
-### 特殊方法
+## 特殊方法
 主要為定義在 object 類別中的方法，請參考[官方文件](https://docs.python.org/3/reference/datamodel.html#special-method-names)。
 * \_\_new\_\_ # 建構類別實例
 * \_\_init\_\_  # 初始化
@@ -165,14 +161,14 @@ class Account(若有父類別則在此括號內以逗號分隔):
 * \_\_format\_\_
 * \_\_bool\_\_
 
-### 裝飾器
+## 裝飾器
 
 * @property
 * @staticmethod 希望某個方法不被拿來做為綁定方法。
 * @classmethod 第一個參數一定是接受所在類別的 type 實例。
 * @abstractmethod
 
-## 例外處理
+# 例外處理
 
 ``` Python
 try:
@@ -189,9 +185,9 @@ finally:
 * SystemExit、GeneratorExit、KeyboardInterrupt、StopIteration 等例外，更像是一種事件，代表著流程因位某個原因無法繼續而必須中斷。
 * 所有例外都是 BaseException 的子類別。
 
-## 測試
+# 測試
 
-## 發行套件 Package distribution
+# 發行套件 Package distribution
 在套件中新增一個名為 setup.py 的檔案，參考內容如下：
 ``` Python
 from distutils.core import setup
@@ -210,7 +206,7 @@ setup(
 * 執行命令 ``` python3 setup.py install ``` 將發行套件檔安裝為本地副本（local copy）
 * 執行命令 ``` python3 setup.py upload ``` 將發行套件上傳至 PyPI
 
-## 常用內建模組
+# 常用內建模組
 * collections
 * time
 * datetime
@@ -227,7 +223,7 @@ setup(
 
 
 
-## 細談群集 Collections
+# 細談群集 Collections
 * Sequences type —> 均為 iterable, 共用方法有 len(), min(), max(), count()
     * Immutable —> 均為 hashable 所以可做為 set/dict 的鍵值
         * tuple
